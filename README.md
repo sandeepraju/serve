@@ -1,12 +1,12 @@
-# h
+# Serve
 
-__h__ is a simple HTTP server for serving static files.
+__Serve__ is a simple HTTP server for serving static files.
 
 ## Installing
 
 ```
 brew tap <add correct path here>
-brew install h
+brew install serve
 ```
 
 ## Usage & Examples
@@ -14,13 +14,22 @@ brew install h
 ### Serve files in the current directory
 
 ```bash
-h .
+serve .
+2017/05/27 22:44:54 Serving ./ at http://localhost:8888/
 ```
 
-### Serve at port 8888 on localhost
+### Serve at port 8000 on 192.168.0.3
 
 ```bash
-h . -a 0.0.0.0 -p 8888
+serve . -a 192.168.0.3 -p 8000
+2017/05/27 22:45:52 Serving ./ at http://localhost:8000/
+```
+
+### Serve /tmp
+
+```bash
+serve /tmp
+2017/05/27 22:44:54 Serving /tmp at http://localhost:8888/
 ```
 
 ## License
