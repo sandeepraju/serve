@@ -1,0 +1,7 @@
+memo = "d6268b6cf4075e82b34a6bbcedf0c06cd99d1c0c94708c526f08d5ad3c746765"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/urfave/cli"
+  packages = ["."]
+  revision = "d70f47eeca3afd795160003bc6e28b001d60c67c"
