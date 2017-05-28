@@ -20,7 +20,7 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "address, a",
-			Usage: "The IP address or hostname to run",
+			Usage: "The IP address or hostname of the interface",
 			Value: "localhost",
 		},
 		cli.IntFlag{
