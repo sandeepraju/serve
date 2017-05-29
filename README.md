@@ -1,4 +1,4 @@
-# Serve
+# Serve (work in progress)
 
 __Serve__ is a simple HTTP server for serving static files.
 
