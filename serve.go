@@ -19,6 +19,11 @@ func main() {
 	}
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
+			Name:  "directory, dir, d",
+			Usage: "The directory to serve",
+			Value: "./",
+		},
+		cli.StringFlag{
 			Name:  "address, a",
 			Usage: "The IP address or hostname of the interface",
 			Value: "localhost",
@@ -30,11 +35,10 @@ func main() {
 		},
 	}
 	app.Action = func(c *cli.Context) error {
+
 		addr := c.String("address")
 		port := c.Int("port")
-
-		// TODO: check how to accept command options in urfave/cli
-		dir := "./"
+		dir := c.String("directory")
 
 		http.Handle("/", http.FileServer(http.Dir(dir)))
 		log.Printf("Serving %s at http://%s:%d/", dir, addr, port)

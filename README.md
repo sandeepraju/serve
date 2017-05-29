@@ -9,26 +9,56 @@ brew tap <add correct path here>
 brew install serve
 ```
 
-## Usage & Examples
+## Usage
+
+```
+NAME:
+   serve - A new cli application
+
+USAGE:
+   serve [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.1
+
+DESCRIPTION:
+   A simple HTTP server for serving static files.
+
+AUTHOR:
+   Sandeep Raju Prabhakar <me@sandeepraju.in>
+
+COMMANDS:
+     help, h  Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --directory value, --dir value, -d value  The directory to serve (default: "./")
+   --address value, -a value                 The IP address or hostname of the interface (default: "localhost")
+   --port value, -p value                    The port to listen on (default: 8888)
+   --help, -h                                show help
+   --version, -v                             print the version
+```
+
+
+## Examples
 
 ### Serve files in the current directory
 
 ```bash
-serve .
+serve
 2017/05/27 22:44:54 Serving ./ at http://localhost:8888/
 ```
 
 ### Serve at port 8000 on 192.168.0.3
 
 ```bash
-serve . -a 192.168.0.3 -p 8000
+serve -a 192.168.0.3 -p 8000
 2017/05/27 22:45:52 Serving ./ at http://localhost:8000/
 ```
 
 ### Serve /tmp
 
 ```bash
-serve /tmp
+serve -d /tmp
 2017/05/27 22:44:54 Serving /tmp at http://localhost:8888/
 ```
 
