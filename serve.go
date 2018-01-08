@@ -45,7 +45,6 @@ func main() {
 		err := http.ListenAndServe(fmt.Sprintf("%s:%d", addr, port), nil)
 		if err != nil {
 			log.Fatal(err)
-			return err
 		}
 
 		return nil
