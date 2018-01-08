@@ -9,6 +9,12 @@ brew tap <add correct path here>
 brew install serve
 ```
 
+## Installing from source code
+
+```
+go get github.com/sandeepraju/serve
+```
+
 ## Usage
 
 ```
@@ -60,6 +66,44 @@ serve -a 192.168.0.3 -p 8000
 ```bash
 serve -d /tmp
 2017/05/27 22:44:54 Serving /tmp at http://localhost:8888/
+```
+
+## Setting up for development
+
+* Make sure [dep](https://github.com/golang/dep) is installed.
+
+```
+go get -u github.com/golang/dep/cmd/dep
+
+or
+
+brew install dep
+```
+
+* Clone this repository
+
+```
+git clone https://github.com/sandeepraju/serve.git
+```
+
+* Install dependencies
+
+```
+dep ensure
+```
+
+* Build the project
+
+```
+go build .
+```
+
+You'll a binary with the name `serve` in the current working directory.
+
+* Run the binary
+
+```
+./serve --help
 ```
 
 ## License

@@ -15,3 +15,6 @@
 
 # Ignore dependencies vendoring
 vendor/
+
+# Ignore the bin from the build
+serve
