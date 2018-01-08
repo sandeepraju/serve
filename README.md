@@ -19,7 +19,7 @@ go get github.com/sandeepraju/serve
 
 ```
 NAME:
-   serve - A new cli application
+   serve - A simple HTTP server for serving static files
 
 USAGE:
    serve [global options] command [command options] [arguments...]
@@ -29,6 +29,21 @@ VERSION:
 
 DESCRIPTION:
    A simple HTTP server for serving static files.
+
+   See https://github.com/sandeepraju/serve for more details!
+
+EXAMPLES:
+   * Serve files in the current directory
+
+      serve
+
+   * Serve at port 8000 on 192.168.0.3
+
+      serve -a 192.168.0.3 -p 8000
+
+   * Serve /tmp
+
+      serve -d /tmp
 
 AUTHOR:
    Sandeep Raju Prabhakar <me@sandeepraju.in>
@@ -111,7 +126,7 @@ You'll a binary with the name `serve` in the current working directory.
 ```
 BSD 3-Clause License
 
-Copyright (c) 2017, Sandeep Raju Prabhakar
+Copyright (c) 2018, Sandeep Raju Prabhakar
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
