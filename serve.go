@@ -11,9 +11,25 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "serve"
+	app.Name = "serve - A simple HTTP server for serving static files"
 	app.Version = "0.0.1"
-	app.Description = "A simple HTTP server for serving static files."
+	app.Usage = ""
+	app.Description = `A simple HTTP server for serving static files.
+
+   See https://github.com/sandeepraju/serve for more details!
+
+EXAMPLES:
+   * Serve files in the current directory
+
+			serve
+
+   * Serve at port 8000 on 192.168.0.3
+
+	    serve -a 192.168.0.3 -p 8000
+
+	 * Serve /tmp
+
+			serve -d /tmp`
 	app.Authors = []cli.Author{
 		{Name: "Sandeep Raju Prabhakar", Email: "me@sandeepraju.in"},
 	}
