@@ -11,7 +11,7 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "serve - A simple HTTP server for serving static files"
+	app.Name = "serve"
 	app.Version = "0.0.1"
 	app.Usage = ""
 	app.Description = `A simple HTTP server for serving static files.

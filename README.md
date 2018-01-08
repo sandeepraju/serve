@@ -19,7 +19,7 @@ go get github.com/sandeepraju/serve
 
 ```
 NAME:
-   serve - A simple HTTP server for serving static files
+   serve
 
 USAGE:
    serve [global options] command [command options] [arguments...]
