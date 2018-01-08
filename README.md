@@ -5,7 +5,7 @@ __Serve__ is a simple HTTP server for serving static files.
 ## Installing
 
 ```
-brew tap <add correct path here>
+brew tap brew tap sandeepraju/packages
 brew install serve
 ```
 
