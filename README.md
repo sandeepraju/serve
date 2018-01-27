@@ -2,18 +2,22 @@
 
 __Serve__ is a simple HTTP server for serving static files.
 
-## Installing
+<!-- ## Installing
 
 ```
 brew tap brew tap sandeepraju/packages
 brew install serve
-```
+``` -->
 
 ## Installing from source code
 
 ```
 go get github.com/sandeepraju/serve
 ```
+
+## Download the latest release
+
+The latest binary of serve can be [downloaded from here](https://github.com/sandeepraju/serve/releases/download/v0.0.1/serve.zip).
 
 ## Usage
 
