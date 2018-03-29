@@ -1,4 +1,4 @@
-.PHONY: build release
+.PHONY: all clean run build release
 
 all:
 	clean
@@ -6,6 +6,9 @@ all:
 clean:
 	rm -f ./serve
 	rm -f ./serve.zip
+
+run:
+	go run serve.go
 
 build:
 	go build .

@@ -49,14 +49,28 @@ EXAMPLES:
 			Usage: "The port to listen on",
 			Value: 8888,
 		},
+		cli.BoolFlag{
+			Name:  "quiet, q",
+			Usage: "Don't print access logs",
+		},
 	}
 	app.Action = func(c *cli.Context) error {
 
 		addr := c.String("address")
 		port := c.Int("port")
 		dir := c.String("directory")
+		quiet := c.Bool("quiet")
 
-		http.Handle("/", http.FileServer(http.Dir(dir)))
+		loggingHandler := func(h http.Handler) http.Handler {
+			return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				if !quiet {
+					log.Println(r.RemoteAddr, r.Method, r.URL.Path, r.URL.RawQuery)
+				}
+				h.ServeHTTP(w, r)
+			})
+		}
+
+		http.Handle("/", loggingHandler(http.FileServer(http.Dir(dir))))
 		log.Printf("Serving %s at http://%s:%d/", dir, addr, port)
 		err := http.ListenAndServe(fmt.Sprintf("%s:%d", addr, port), nil)
 		if err != nil {

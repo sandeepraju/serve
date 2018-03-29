@@ -23,4 +23,4 @@
 
 [[constraint]]
   name = "github.com/urfave/cli"
-  revision = "75104e932ac2ddb944a6ea19d9f9f26316ff1145"
+  revision = "8e01ec4cd3e2d84ab2fe90d8210528ffbb06d8ff"
