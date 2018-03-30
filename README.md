@@ -121,7 +121,7 @@ make init
 make clean build_macos build_linux release_macos release_linux
 ```
 
-You'll a binary (symlink) with the name `serve` in the current working directory.
+You'll find a binary (symlink) with the name `serve` in the current working directory.
 
 * Run the binary
 
