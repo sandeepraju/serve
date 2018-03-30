@@ -17,7 +17,10 @@ go get github.com/sandeepraju/serve
 
 ## Download the latest release
 
-The latest binary of serve can be [downloaded from here](https://github.com/sandeepraju/serve/releases/download/v0.0.1/serve.zip).
+- [Linux x64](https://github.com/sandeepraju/serve/releases/download/v0.0.2/serve-linux_x64.zip)
+- [MacOS x64](https://github.com/sandeepraju/serve/releases/download/v0.0.2/serve-macos_x64.zip)
+
+The latest binary of serve can be [downloaded from here](https://github.com/sandeepraju/serve/releases/download/v0.0.2/serve.zip).
 
 ## Usage
 
@@ -29,7 +32,7 @@ USAGE:
    serve [global options] command [command options] [arguments...]
 
 VERSION:
-   0.0.1
+   0.0.2
 
 DESCRIPTION:
    A simple HTTP server for serving static files.
@@ -59,6 +62,7 @@ GLOBAL OPTIONS:
    --directory value, --dir value, -d value  The directory to serve (default: "./")
    --address value, -a value                 The IP address or hostname of the interface (default: "localhost")
    --port value, -p value                    The port to listen on (default: 8888)
+   --quiet, -q                               Don't print access logs
    --help, -h                                show help
    --version, -v                             print the version
 ```
@@ -108,16 +112,16 @@ git clone https://github.com/sandeepraju/serve.git
 * Install dependencies
 
 ```
-dep ensure
+make init
 ```
 
-* Build the project
+* Build & release the project (assuming you are developing on MacOS)
 
 ```
-go build .
+make clean build_macos build_linux release_macos release_linux
 ```
 
-You'll a binary with the name `serve` in the current working directory.
+You'll a binary (symlink) with the name `serve` in the current working directory.
 
 * Run the binary
 

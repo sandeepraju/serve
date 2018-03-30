@@ -16,8 +16,8 @@
 # Ignore dependencies vendoring
 vendor/
 
-# Ignore the bin from the build
+# Ignore the bin symlink from the build
 serve
 
-# Ignore the release zip
-serve.zip
+# Ignore the build folder
+_build/

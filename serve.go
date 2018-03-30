@@ -12,7 +12,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "serve"
-	app.Version = "0.0.1"
+	app.Version = "0.0.2"
 	app.Usage = ""
 	app.Description = `A simple HTTP server for serving static files.
 

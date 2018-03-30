@@ -1,19 +1,43 @@
-.PHONY: all clean run build release
+.PHONY: all clean init run build release
+
+GO_VERSION=1.10
+
+MACOS_X64_BIN_TARGET=${CURDIR}/_build/release/macos_x64/serve
+MACOS_X64_ZIP_TARGET=${CURDIR}/_build/release/macos_x64/serve-macos_x64.zip
+
+LINUX_X64_BIN_TARGET=${CURDIR}/_build/release/linux_x64/serve
+LINUX_X64_ZIP_TARGET=${CURDIR}/_build/release/linux_x64/serve-linux_x64.zip
 
 all:
 	clean
 
 clean:
+	rm -rf _build
 	rm -f ./serve
-	rm -f ./serve.zip
+
+init:
+	dep ensure
 
 run:
 	go run serve.go
 
-build:
-	go build .
+build_macos:
+	go build -o ${MACOS_X64_BIN_TARGET} .
+	ln -s ${MACOS_X64_BIN_TARGET} ${CURDIR}/serve
 
-release:
-	echo "zipping..."
-	zip serve.zip serve
-	openssl sha -sha256 serve.zip
+build_linux:
+	docker pull golang:${GO_VERSION}
+	docker run \
+		--rm -v ${CURDIR}:/go/src/github.com/sandeepraju/serve \
+		-w /go/src/github.com/sandeepraju/serve golang:${GO_VERSION} \
+		sh -c 'go get -u github.com/golang/dep/cmd/dep && dep ensure && go build -o ./_build/release/linux_x64/serve .'
+
+release_macos:
+	zip ${MACOS_X64_ZIP_TARGET} ${MACOS_X64_BIN_TARGET}
+	openssl sha -sha256 ${MACOS_X64_ZIP_TARGET}
+	find _build -name *.zip
+
+release_linux:
+	zip ${LINUX_X64_ZIP_TARGET} ${LINUX_X64_BIN_TARGET}
+	openssl sha -sha256 ${LINUX_X64_ZIP_TARGET}
+	find _build -name *.zip
