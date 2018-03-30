@@ -33,11 +33,11 @@ build_linux:
 		sh -c 'go get -u github.com/golang/dep/cmd/dep && dep ensure && go build -o ./_build/release/linux_x64/serve .'
 
 release_macos:
-	zip ${MACOS_X64_ZIP_TARGET} ${MACOS_X64_BIN_TARGET}
+	zip -j ${MACOS_X64_ZIP_TARGET} ${MACOS_X64_BIN_TARGET}
 	openssl sha -sha256 ${MACOS_X64_ZIP_TARGET}
 	find _build -name *.zip
 
 release_linux:
-	zip ${LINUX_X64_ZIP_TARGET} ${LINUX_X64_BIN_TARGET}
+	zip -j ${LINUX_X64_ZIP_TARGET} ${LINUX_X64_BIN_TARGET}
 	openssl sha -sha256 ${LINUX_X64_ZIP_TARGET}
 	find _build -name *.zip
