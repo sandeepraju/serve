@@ -2,12 +2,12 @@
 
 __Serve__ is a simple HTTP server for serving static files.
 
-<!-- ## Installing
+## Installing from Homebrew
 
 ```
-brew tap brew tap sandeepraju/packages
+brew tap sandeepraju/packages
 brew install serve
-``` -->
+```
 
 ## Installing from source code
 
