@@ -1,4 +1,4 @@
-.PHONY: all clean init run build release
+.PHONY: all clean init run build_macos build_linux release_macos release_linux
 
 GO_VERSION=1.10
 
