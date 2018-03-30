@@ -34,10 +34,10 @@ build_linux:
 
 release_macos:
 	zip -j ${MACOS_X64_ZIP_TARGET} ${MACOS_X64_BIN_TARGET}
-	openssl sha -sha256 ${MACOS_X64_ZIP_TARGET}
+	shasum -a256 ${MACOS_X64_ZIP_TARGET}
 	find _build -name *.zip
 
 release_linux:
 	zip -j ${LINUX_X64_ZIP_TARGET} ${LINUX_X64_BIN_TARGET}
-	openssl sha -sha256 ${LINUX_X64_ZIP_TARGET}
+	shasum -a256 ${LINUX_X64_ZIP_TARGET}
 	find _build -name *.zip
