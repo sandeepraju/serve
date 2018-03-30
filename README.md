@@ -17,8 +17,8 @@ go get github.com/sandeepraju/serve
 
 ## Download the latest release
 
-- [Linux x64](https://github.com/sandeepraju/serve/releases/download/v0.0.2/serve-linux_x64.zip)
-- [MacOS x64](https://github.com/sandeepraju/serve/releases/download/v0.0.2/serve-macos_x64.zip)
+- [Linux x64](https://github.com/sandeepraju/serve/files/1864892/serve-linux_x64.zip)
+- [MacOS x64](https://github.com/sandeepraju/serve/files/1864893/serve-macos_x64.zip)
 
 The latest binary of serve can be [downloaded from here](https://github.com/sandeepraju/serve/releases/download/v0.0.2/serve.zip).
 
